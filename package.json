@@ -2,7 +2,7 @@
   "name": "vscode-imagemin",
   "displayName": "Image Minify",
   "description": "An vscode extension to minify image",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "publisher": "axetroy",
   "engines": {
     "vscode": "^1.21.0"
