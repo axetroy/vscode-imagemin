@@ -1,0 +1,5 @@
+{
+  "ext.config.title": "圖片壓縮",
+  "ext.config.rule": "壓縮圖片的文件名輸出格式",
+  "cmd.image.minify": "壓縮圖片"
+}

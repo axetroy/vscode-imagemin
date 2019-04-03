@@ -1,0 +1,5 @@
+{
+  "ext.config.title": "图片压缩",
+  "ext.config.rule": "压缩图片的文件名输出格式。没有必要的情况下无需修改它。",
+  "cmd.image.minify": "压缩图片"
+}

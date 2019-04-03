@@ -1,0 +1,5 @@
+{
+  "ext.config.title": "Image Minify Configuration",
+  "ext.config.rule": "Image output file name format. You don't need to change this.",
+  "cmd.image.minify": "Minify Image"
+}

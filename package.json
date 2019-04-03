@@ -1,0 +1,100 @@
+{
+  "name": "vscode-imagemin",
+  "displayName": "Image Minify",
+  "description": "Open html file in browser",
+  "version": "0.3.0",
+  "publisher": "axetroy",
+  "engines": {
+    "vscode": "^1.21.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axetroy/vscode-imagemin.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/axetroy/vscode-imagemin/issues"
+  },
+  "homepage": "https://github.com/axetroy/vscode-imagemin#readme",
+  "keywords": [
+    "browser"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "icon": "resources/icon.png",
+  "main": "./out/index.js",
+  "activationEvents": [
+    "onCommand:image.minify"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "image.minify",
+        "title": "%cmd.image.minify%",
+        "category": "image",
+        "icon": {
+          "light": "./resources/light/compress.svg",
+          "dark": "./resources/dark/compress.svg"
+        }
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|svg|gif)$/",
+          "command": "image.minify",
+          "group": "image"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "image.minify",
+          "when": "never"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "%ext.config.title%",
+      "properties": {
+        "imagemin.format": {
+          "type": "string",
+          "default": "$FileName.min.$FileExtensionName",
+          "markdownDescription": "%ext.config.rule%"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "clean": "rimraf ./out",
+    "compile": "npm run clean && npm run lint && npx @zeit/ncc build src/index.ts -o ./dist -e vscode -m && npm run clean && move-cli ./dist ./out",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "lint": "tslint -p ./ -c tslint.json",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "publish": "npx vsce publish"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^5.0.5",
+    "@types/imagemin": "^6.0.0",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.10.4",
+    "@types/open": "^6.0.0",
+    "move-cli": "^1.2.1",
+    "rimraf": "^2.6.3",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3333",
+    "vscode": "^1.1.30"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "imagemin": "^6.1.0",
+    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^7.0.0",
+    "imagemin-svgo": "^7.0.0"
+  }
+}
