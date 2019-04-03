@@ -1,8 +1,8 @@
 {
   "name": "vscode-imagemin",
   "displayName": "Image Minify",
-  "description": "Open html file in browser",
-  "version": "0.3.0",
+  "description": "An vscode extension to minify image",
+  "version": "0.1.0",
   "publisher": "axetroy",
   "engines": {
     "vscode": "^1.21.0"
