@@ -1,5 +1,7 @@
 # vscode-imagemin
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/axetroy/vscode-imagemin.svg)](https://greenkeeper.io/)
+
 An vscode extension minify image.
 
 ## [CHANGELOG](https://github.com/axetroy/vscode-imagemin/blob/master/CHANGELOG.md)
