@@ -16,7 +16,7 @@ An vscode extension minify image.
 
 ## Screenshot
 
-![1](https://github.com/axetroy/vscode-open-in-browser/raw/master/screenshot/1.gif)
+![1](https://github.com/axetroy/vscode-imagemin/raw/master/screenshot/1.gif)
 
 ## [CHANGELOG](https://github.com/axetroy/vscode-imagemin/blob/master/CHANGELOG.md)
 
