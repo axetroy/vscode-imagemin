@@ -1,5 +1,17 @@
 {
   "ext.config.title": "图片压缩",
   "ext.config.rule": "压缩图片的文件名输出格式。没有必要的情况下无需修改它。",
+  "ext.config.png.speed": "速度 `10` 的质量降低了5％，但比默认值快8倍。 速度 `11` 禁用抖动并降低压缩级别。",
+  "ext.config.png.strip": "删除可选元数据。",
+  "ext.config.png.quality.min": "指示 pngquant 使用满足或超过最高质量所需的最少量的颜色。 如果转换导致质量低于最低质量，则不会保存图像。",
+  "ext.config.png.quality.max": "指示 pngquant 使用满足或超过最高质量所需的最少量的颜色。 如果转换导致质量低于最低质量，则不会保存图像。",
+  "ext.config.png.dithering": "使用 `0`（无）和 `1`（全力）之间的小数来设置抖动级别。",
+  "ext.config.png.posterize": "截断最低有效位数（每个通道）的数量。 当图像将在低深度显示器（例如16位RGB）上输出时使用此选项。 pngquant 将使几乎不透明的像素完全不透明，并减少半透明颜色的数量。",
+  "ext.config.jpg.progressive": "无损转换为渐进式。",
+  "ext.config.jpg.arithmetic": "使用 [arithmetic 编码](http://en.wikipedia.org/wiki/Arithmetic_coding).",
+  "ext.config.svg.options": "传递给 [SVGO](https://github.com/svg/svgo#what-it-can-do) 的参数.",
+  "ext.config.gif.interlaced": "用于渐进式渲染的交错 gif。",
+  "ext.config.gif.optimizationLevel": "选择 `1` 和 `3` 之间的优化级别。 \n\n> 优化级别确定完成了多少优化; 较高的等级需要更长时间，但可能会有更好的结果\n\n 1. 仅存储每个图像的更改部分。\n\n 2. 还使用透明度进一步缩小文件。\n\n 3. 尝试几种优化方法（通常较慢，有时候效果更好）",
+  "ext.config.gif.colors": "将每个输出 gif 中不同颜色的数量减少到 `Num` 或更少。 `Num` 必须介于 `2` 和 `256` 之间。",
   "cmd.image.minify": "压缩图片"
 }

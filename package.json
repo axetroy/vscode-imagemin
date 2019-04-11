@@ -61,6 +61,75 @@
           "type": "string",
           "default": "$FileName.min.$FileExtensionName",
           "markdownDescription": "%ext.config.rule%"
+        },
+        "imagemin.png.speed": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 11,
+          "default": 3,
+          "markdownDescription": "%ext.config.png.speed%"
+        },
+        "imagemin.png.strip": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "%ext.config.png.strip%"
+        },
+        "imagemin.png.quality.min": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.3,
+          "markdownDescription": "%ext.config.png.quality.min%"
+        },
+        "imagemin.png.quality.max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.5,
+          "markdownDescription": "%ext.config.png.quality.max%"
+        },
+        "imagemin.png.dithering": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 1,
+          "markdownDescription": "%ext.config.png.dithering%"
+        },
+        "imagemin.png.posterize": {
+          "type": "integer",
+          "markdownDescription": "%ext.config.png.posterize%"
+        },
+        "imagemin.jpg.progressive": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "%ext.config.jpg.progressive%"
+        },
+        "imagemin.jpg.arithmetic": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "%ext.config.jpg.arithmetic%"
+        },
+        "imagemin.svg.options": {
+          "type": "object",
+          "markdownDescription": "%ext.config.svg.options%"
+        },
+        "imagemin.gif.interlaced": {
+          "type": "boolean",
+          "markdownDescription": "%ext.config.gif.interlaced%"
+        },
+        "imagemin.gif.optimizationLevel": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3,
+          "default": 1,
+          "markdownDescription": "%ext.config.gif.optimizationLevel%"
+        },
+        "imagemin.gif.colors": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 256,
+          "default": 2,
+          "markdownDescription": "%ext.config.gif.colors%"
         }
       }
     }

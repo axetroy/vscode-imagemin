@@ -7,27 +7,45 @@ export async function minify(uri: vscode.Uri) {
   const ext = path.extname(uri.fsPath);
   const plugins: imagemin.Plugin[] = [];
 
+  const configuration = vscode.workspace.getConfiguration("imagemin");
+
   switch (ext) {
     case ".jpg":
     case ".jpeg":
-      plugins.push(require("imagemin-jpegtran")());
+      const jpgOptions = {
+        progressive: configuration.get("jpg.progressive"),
+        arithmetic: configuration.get("jpg.arithmetic")
+      };
+      plugins.push(require("imagemin-jpegtran")(jpgOptions));
       break;
     case ".svg":
-      plugins.push(require("imagemin-svgo")());
+      const svgOptions = configuration.get("imagemin.svg.options") || {};
+      plugins.push(require("imagemin-svgo")(svgOptions));
       break;
     case ".gif":
-      plugins.push(require("imagemin-gifsicle")());
+      const gifOptions = {
+        interlaced: configuration.get("gif.interlaced"),
+        optimizationLevel: configuration.get("gif.optimizationLevel"),
+        colors: configuration.get("gif.colors")
+      };
+      plugins.push(require("imagemin-gifsicle")(gifOptions));
       break;
     case ".png":
-      plugins.push(
-        require("imagemin-pngquant")({
-          quality: [0.6, 0.8]
-        })
-      );
+      const pngOptions = {
+        speed: configuration.get("png.speed"),
+        strip: configuration.get("png.strip"),
+        dithering: configuration.get("png.dithering"),
+        posterize: configuration.get("png.posterize"),
+        quality: [
+          configuration.get("png.quality.min"),
+          configuration.get("png.quality.max")
+        ]
+      };
+      plugins.push(require("imagemin-pngquant")(pngOptions));
       break;
   }
 
-  const [result] = await imagemin([uri.fsPath], {
+  const buffer = await imagemin.buffer(await fs.readFile(uri.fsPath), {
     plugins
   });
 
@@ -44,5 +62,5 @@ export async function minify(uri: vscode.Uri) {
       .trim() || filename + ".min" + ext.replace(/^\./, "")
   );
 
-  await fs.writeFile(outputPath, result.data);
+  await fs.writeFile(outputPath, buffer);
 }

@@ -1,5 +1,17 @@
 {
   "ext.config.title": "Image Minify Configuration",
   "ext.config.rule": "Image output file name format. You don't need to change this.",
+  "ext.config.png.speed": "Speed `10` has 5% lower quality, but is about 8 times faster than the default. Speed `11` disables dithering and lowers compression level.",
+  "ext.config.png.strip": "Remove optional metadata.",
+  "ext.config.png.quality.min": "Instructs pngquant to use the least amount of colors required to meet or exceed the max quality. If conversion results in quality below the min quality the image won't be saved.",
+  "ext.config.png.quality.max": "Instructs pngquant to use the least amount of colors required to meet or exceed the max quality. If conversion results in quality below the min quality the image won't be saved.",
+  "ext.config.png.dithering": "Set the dithering level using a fractional number between `0` (none) and `1` (full).",
+  "ext.config.png.posterize": "Truncate number of least significant bits of color (per channel). Use this when image will be output on low-depth displays (e.g. 16-bit RGB). pngquant will make almost-opaque pixels fully opaque and will reduce amount of semi-transparent colors.",
+  "ext.config.jpg.progressive": "Lossless conversion to progressive.",
+  "ext.config.jpg.arithmetic": "Use [arithmetic coding](http://en.wikipedia.org/wiki/Arithmetic_coding).",
+  "ext.config.svg.options": "Pass options to [SVGO](https://github.com/svg/svgo#what-it-can-do).",
+  "ext.config.gif.interlaced": "Interlace gif for progressive rendering.",
+  "ext.config.gif.optimizationLevel": "Select an optimization level between `1` and `3`. \n\n> The optimization level determines how much optimization is done; higher levels take longer, but may have better results.\n\n 1. Stores only the changed portion of each image.\n\n 2. Also uses transparency to shrink the file further.\n\n 3. Try several optimization methods (usually slower, sometimes better results)",
+  "ext.config.gif.colors": "Reduce the number of distinct colors in each output GIF to num or less. Num must be between `2` and `256`.",
   "cmd.image.minify": "Minify Image"
 }
