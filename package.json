@@ -40,6 +40,13 @@
       }
     ],
     "menus": {
+      "editor/title": [
+        {
+          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|svg|gif)$/",
+          "command": "image.minify",
+          "group": "navigation@1"
+        }
+      ],
       "explorer/context": [
         {
           "when": "resourceExtname =~ /\\.(png|jpg|jpeg|svg|gif)$/",
